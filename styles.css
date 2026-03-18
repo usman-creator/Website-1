@@ -3253,3 +3253,116 @@ textarea:focus {
     max-height: 300px;
   }
 }
+
+/* Testimonials refresh */
+.google-reviews-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid rgba(18, 54, 107, 0.16);
+  color: #244778;
+  font-weight: 700;
+  font-size: 0.88rem;
+  box-shadow: 0 10px 20px rgba(20, 57, 110, 0.12);
+}
+
+.google-reviews-badge svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.review-stars {
+  color: #f5b301;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.patients-say-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.testimonials-page {
+  padding-top: 56px;
+}
+
+.testimonials-page-head {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.testimonials-page-head .google-reviews-badge {
+  margin-top: 8px;
+}
+
+.testimonials-page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.testimonials-page .say-card {
+  min-height: 100%;
+}
+
+@media (max-width: 980px) {
+  .patients-say-cards,
+  .testimonials-page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Testimonials carousel (homepage + testimonials page) */
+.testimonials-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.testimonials-track {
+  display: flex;
+  transition: transform 0.55s ease;
+  will-change: transform;
+}
+
+.testimonials-slide {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.testimonials-page-slider .testimonials-slide {
+  gap: 20px;
+}
+
+.testimonials-slide .say-card {
+  margin: 0;
+  height: 100%;
+}
+
+.testimonials-indicators {
+  margin-top: 18px;
+}
+
+.testimonials-page .testimonials-indicators {
+  justify-content: center;
+}
+
+@media (max-width: 1100px) {
+  .testimonials-slide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .testimonials-slide {
+    grid-template-columns: 1fr;
+  }
+}
