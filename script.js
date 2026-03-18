@@ -1,4 +1,4 @@
-﻿const menuToggle = document.querySelector('.menu-toggle');
+const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.getElementById('mainNav');
 
 if (menuToggle && mainNav) {
@@ -166,6 +166,35 @@ if (aboutGalleryPages && aboutGalleryDots.length > 0) {
 
   setAboutSlide(0);
 }
+
+const testimonialSliders = document.querySelectorAll('[data-testimonials-slider]');
+testimonialSliders.forEach((slider) => {
+  const track = slider.querySelector('.testimonials-track');
+  if (!track) {
+    return;
+  }
+
+  const indicators = slider.parentElement?.querySelectorAll('.testimonials-indicators .about-gallery-dot') || [];
+  let activeSlide = 0;
+  const maxSlide = Math.max(0, track.children.length - 1);
+
+  const setSlide = (index) => {
+    activeSlide = Math.max(0, Math.min(index, maxSlide));
+    track.style.transform = `translateX(-${activeSlide * 100}%)`;
+    indicators.forEach((dot, dotIndex) => {
+      dot.classList.toggle('active', dotIndex === activeSlide);
+    });
+  };
+
+  indicators.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const slideIndex = Number(dot.getAttribute('data-slide') || '0');
+      setSlide(slideIndex);
+    });
+  });
+
+  setSlide(0);
+});
 
 const galleryLightbox = document.getElementById('galleryLightbox');
 const galleryLightboxImg = document.getElementById('galleryLightboxImg');
