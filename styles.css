@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #eef4ff;
   --surface: #ffffff;
   --ink: #0f1f3a;
@@ -3364,5 +3364,73 @@ textarea:focus {
 @media (max-width: 760px) {
   .testimonials-slide {
     grid-template-columns: 1fr;
+  }
+}
+
+/* About team section */
+.team-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.team-card {
+  position: relative;
+  min-height: 340px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(20, 57, 110, 0.18);
+  background: linear-gradient(160deg, #d7e4f7 0%, #b8cae8 100%);
+}
+
+.team-card-image {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.42), transparent 40%),
+    linear-gradient(155deg, #c2d3ea 0%, #9db6da 100%);
+}
+
+.team-card-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 18px 18px 16px;
+  color: #ffffff;
+  background: linear-gradient(180deg, rgba(8, 24, 53, 0.05) 0%, rgba(8, 24, 53, 0.84) 56%, rgba(8, 24, 53, 0.96) 100%);
+}
+
+.team-card-overlay h3 {
+  margin: 0 0 4px;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.team-card-overlay p {
+  margin: 0;
+  color: #d3e3ff;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.team-card-overlay .team-years {
+  margin-top: 6px;
+  color: #7de1ca;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1120px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    min-height: 310px;
   }
 }
