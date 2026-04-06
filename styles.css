@@ -941,26 +941,26 @@ textarea:focus {
   background: linear-gradient(165deg, #e5f0fb 0%, #d7e8f6 100%);
   border: 1px solid #c9dbef;
   min-height: 330px;
-  display: grid;
-  place-items: center;
+  padding: 14px;
 }
 
 .map-inner {
-  width: min(86%, 420px);
-  min-height: 230px;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
   border-radius: 16px;
-  border: 2px dashed #9ab9d8;
-  background: rgba(255, 255, 255, 0.5);
-  display: grid;
-  place-items: center;
-  text-align: center;
-  color: #3e608a;
-  font-weight: 600;
-  padding: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(109, 145, 183, 0.35);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
 }
 
-.map-inner p {
-  margin: 4px 0;
+.map-inner iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  border: 0;
+  display: block;
 }
 
 @media (max-width: 1080px) {
@@ -970,6 +970,7 @@ textarea:focus {
 
   .map-slot {
     min-height: 260px;
+    padding: 10px;
   }
 }
 
