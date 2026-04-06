@@ -430,6 +430,94 @@ textarea:focus {
   color: #15345f;
 }
 
+.procedure-wrap h2 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  color: #15345f;
+}
+
+
+.procedure-wrap p {
+  color: #3f5477;
+}
+
+.procedure-list {
+  margin: 8px 0 10px;
+  padding-left: 22px;
+  color: #3f5477;
+}
+
+.procedure-list li {
+  margin-bottom: 6px;
+}
+
+.procedure-stack-section {
+  margin-top: 18px;
+  padding: 18px 20px;
+  border: 1px solid #dbe7f8;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+  box-shadow: 0 10px 22px rgba(16, 45, 90, 0.08);
+}
+
+.procedure-stack-section h2 {
+  margin-top: 0;
+}
+
+.implant-hero-image {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+  margin: 0;
+  box-shadow: 0 10px 20px rgba(15, 44, 90, 0.14);
+}
+
+.implant-section {
+  margin-top: 22px;
+  padding: 18px;
+  border: 1px solid #dbe7f8;
+  border-radius: 16px;
+  background: #f9fcff;
+}
+
+.implant-section h3 {
+  margin-top: 14px;
+  margin-bottom: 6px;
+  color: #1c3e6f;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+}
+
+.implant-split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.implant-media {
+  margin-top: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(16, 45, 90, 0.14);
+  background: #eaf2ff;
+}
+
+.implant-media img {
+  width: 100%;
+  display: block;
+  height: auto;
+  max-height: 320px;
+  object-fit: cover;
+}
+
+.implant-section-intro {
+  margin-top: 10px;
+}
+
+
 .procedure-wrap .eyebrow {
   color: #2c7b90;
 }
@@ -566,9 +654,30 @@ textarea:focus {
   display: block;
 }
 
+.procedure-media-contained {
+  padding: 18px;
+  background: linear-gradient(180deg, #f7fbff 0%, #e7f1ff 100%);
+}
+
+.procedure-media-contained img {
+  object-fit: contain;
+  object-position: center;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
 @media (max-width: 1080px) {
   .procedure-hero-grid {
     grid-template-columns: 1fr;
+  }
+
+  .implant-split {
+    grid-template-columns: 1fr;
+  }
+
+  .implant-media img,
+  .implant-hero-image {
+    max-height: 260px;
   }
 }
 
@@ -1327,6 +1436,29 @@ textarea:focus {
   gap: 16px;
 }
 
+.procedure-parent-card {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: linear-gradient(140deg, #eef6ff 0%, #dceafe 100%);
+  border: 1px solid #c7daf5;
+  border-radius: 18px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 24px rgba(18, 52, 102, 0.1);
+}
+
+.procedure-parent-card h3 {
+  margin: 0 0 4px;
+  color: #15345f;
+}
+
+.procedure-parent-card p {
+  margin: 0;
+  color: #40608f;
+}
+
 .procedure-tile {
   position: relative;
   display: block;
@@ -1394,6 +1526,11 @@ textarea:focus {
 }
 
 @media (max-width: 980px) {
+  .procedure-parent-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .procedure-spotlight-grid {
     grid-template-columns: 1fr;
   }
@@ -3432,5 +3569,481 @@ textarea:focus {
 
   .team-card {
     min-height: 310px;
+  }
+}
+
+/* Oral surgery parent block refresh */
+.procedure-parent-card {
+  gap: 22px;
+  background:
+    linear-gradient(115deg, rgba(13, 58, 127, 0.95) 0%, rgba(16, 77, 140, 0.9) 55%, rgba(24, 138, 138, 0.88) 100%),
+    radial-gradient(circle at 15% 20%, rgba(129, 225, 204, 0.3), transparent 42%);
+  border: 1px solid rgba(149, 204, 244, 0.36);
+  border-radius: 20px;
+  padding: 22px 24px;
+  box-shadow: 0 16px 34px rgba(10, 38, 84, 0.26);
+}
+
+.procedure-parent-card .eyebrow {
+  color: #9cf0d6;
+  margin-bottom: 6px;
+}
+
+.procedure-parent-card h3 {
+  margin: 0 0 6px;
+  color: #ffffff;
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+}
+
+.procedure-parent-card p {
+  color: #d8e8ff;
+}
+
+.procedure-parent-copy {
+  max-width: 76ch;
+}
+
+.procedure-parent-media {
+  width: min(280px, 100%);
+  height: 180px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 28px rgba(8, 31, 70, 0.22);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.procedure-parent-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.procedure-parent-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+  min-width: 230px;
+}
+
+.procedure-parent-cta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #30cba9, #27b99b);
+  color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 12px 22px rgba(43, 188, 157, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.procedure-parent-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(43, 188, 157, 0.42);
+}
+
+.procedure-parent-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(235, 246, 255, 0.75);
+  color: #eef6ff;
+  font-weight: 700;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.procedure-parent-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+@media (max-width: 980px) {
+  .procedure-parent-card {
+    padding: 18px;
+  }
+
+  .procedure-parent-actions {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .procedure-parent-media {
+    width: 100%;
+    height: 220px;
+  }
+}
+
+.procedure-consult-card {
+  margin-top: 28px;
+  padding: 24px 28px;
+  border-radius: 22px;
+  border: 1px solid #dbe7f8;
+  background: linear-gradient(180deg, #ffffff 0%, #f5faff 100%);
+  box-shadow: 0 16px 34px rgba(16, 45, 90, 0.1);
+}
+
+.procedure-consult-card h2 {
+  margin-bottom: 8px;
+}
+
+.procedure-consult-card p {
+  max-width: 72ch;
+}
+
+/* Dental implants page visual refinement */
+.procedure-wrap .implant-section {
+  margin-top: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.procedure-wrap .implant-section h2 {
+  margin: 0 0 14px;
+  position: relative;
+  padding-left: 14px;
+}
+
+.procedure-wrap .implant-section h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 4px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #2abfa0 0%, #2b7fc0 100%);
+}
+
+.procedure-wrap .implant-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 0;
+  align-items: start;
+  border: 1px solid #d7e6fb;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 14px 28px rgba(17, 48, 95, 0.12);
+}
+
+.procedure-wrap .implant-split > div:first-child {
+  padding: 24px 26px;
+}
+
+.procedure-wrap .implant-section p {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.procedure-wrap .implant-section h3 {
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+.procedure-wrap .implant-media {
+  margin: 0;
+  height: 320px;
+  border-radius: 0;
+  box-shadow: none;
+  background: #dbe8fb;
+}
+
+.procedure-wrap .implant-media img,
+.procedure-wrap .implant-hero-image {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.procedure-wrap .implant-section-intro .implant-media {
+  height: 300px;
+}
+
+@media (max-width: 1100px) {
+  .procedure-wrap .implant-split {
+    grid-template-columns: 1fr;
+  }
+
+  .procedure-wrap .implant-split > div:first-child {
+    padding: 20px;
+  }
+
+  .procedure-wrap .implant-media {
+    height: 240px;
+  }
+}
+
+/* Dental implants alternating split layout */
+.implants-page .procedure-wrap {
+  padding: 28px;
+}
+
+.implants-page .implant-section {
+  margin-top: 26px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.implants-page .implant-section h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.22rem, 2vw, 1.56rem);
+}
+
+.implants-page .implant-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.implants-page .implant-copy-card {
+  padding: 24px 26px;
+  border-radius: 22px;
+  border: 1px solid #d7e4f7;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 14px 28px rgba(15, 43, 89, 0.1);
+}
+
+.implants-page .implant-split-reverse {
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+}
+
+.implants-page .implant-split-reverse > div:first-child {
+  order: 2;
+}
+
+.implants-page .implant-split-reverse .implant-media {
+  order: 1;
+}
+
+.implants-page .implant-media {
+  height: clamp(240px, 30vw, 320px);
+  min-height: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 16px 30px rgba(15, 43, 89, 0.14);
+  background: linear-gradient(180deg, #f8fbff 0%, #e6f0ff 100%);
+  padding: 14px;
+}
+
+.implants-page .implant-media img,
+.implants-page .implant-hero-image {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-radius: 16px;
+  box-shadow: none;
+  background: #ffffff;
+}
+
+.implants-page .implant-section-alt .implant-copy-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f9ff 100%);
+}
+
+.implants-page .implant-section-soft .implant-copy-card {
+  background: linear-gradient(180deg, #fdfefe 0%, #f0f7ff 100%);
+}
+
+.implants-page .implant-section-alt .implant-media-card {
+  transform: translateY(10px);
+}
+
+.implants-page .implant-section-soft .implant-media-card {
+  transform: translateY(-10px);
+}
+
+.implants-page .implant-section h3 {
+  margin-top: 14px;
+  margin-bottom: 5px;
+  font-size: clamp(1.02rem, 1.7vw, 1.18rem);
+}
+
+@media (max-width: 1080px) {
+  .implants-page .procedure-wrap {
+    padding: 20px;
+  }
+
+  .implants-page .implant-split,
+  .implants-page .implant-split-reverse {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .implants-page .implant-split-reverse > div:first-child,
+  .implants-page .implant-split-reverse .implant-media {
+    order: initial;
+  }
+
+  .implants-page .implant-copy-card {
+    padding: 18px;
+  }
+
+  .implants-page .implant-media {
+    height: 240px;
+  }
+
+  .implants-page .implant-section-alt .implant-media-card,
+  .implants-page .implant-section-soft .implant-media-card {
+    transform: none;
+  }
+}
+
+/* Dental implants page readability and spacing refinement */
+.implants-page .container {
+  width: min(1480px, 94%);
+}
+
+.implants-page .procedure-wrap {
+  padding: 6px 0 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.implants-page h1 {
+  font-size: clamp(1.9rem, 3vw, 3rem);
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.implants-page .eyebrow {
+  margin-bottom: 12px;
+}
+
+.implants-page .implant-kicker {
+  margin: 0 0 14px;
+  color: #1c7f94;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.88rem;
+}
+
+.implants-page .implant-section {
+  margin-top: 34px;
+}
+
+.implants-page .implant-section + .implant-section {
+  margin-top: 48px;
+}
+
+.implants-page .implant-section h2 {
+  margin-bottom: 16px;
+  font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+}
+
+.implants-page .implant-split {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
+  gap: 26px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.implants-page .implant-split-reverse {
+  grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1fr);
+}
+
+.implants-page .implant-hero-split {
+  grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
+  align-items: stretch;
+}
+
+.implants-page .implant-copy-card {
+  padding: 32px 34px;
+  border-radius: 26px;
+  border: 1px solid rgba(204, 220, 243, 0.95);
+  box-shadow: 0 18px 42px rgba(15, 43, 89, 0.1);
+}
+
+.implants-page .implant-copy-card p {
+  font-size: 1.08rem;
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+
+.implants-page .implant-hero-copy {
+  background:
+    radial-gradient(circle at top left, rgba(72, 202, 176, 0.14), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+}
+
+.implants-page .implant-hero-actions {
+  margin-top: 20px;
+}
+
+.implants-page .implant-section h3 {
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-size: clamp(1.08rem, 1.7vw, 1.32rem);
+}
+
+.implants-page .implant-media {
+  height: clamp(300px, 34vw, 410px);
+  padding: 18px;
+  border-radius: 28px;
+  box-shadow: 0 22px 44px rgba(15, 43, 89, 0.16);
+}
+
+.implants-page .implant-media img,
+.implants-page .implant-hero-image {
+  border-radius: 22px;
+}
+
+.implants-page .implant-section-intro .implant-media {
+  height: clamp(340px, 36vw, 460px);
+  background:
+    linear-gradient(180deg, #edf9ff 0%, #dbefff 100%);
+}
+
+.implants-page .implant-section-alt .implant-media-card {
+  transform: translateY(18px);
+}
+
+.implants-page .implant-section-soft .implant-media-card {
+  transform: translateY(-18px);
+}
+
+@media (max-width: 1200px) {
+  .implants-page .implant-copy-card {
+    padding: 26px 26px;
+  }
+
+  .implants-page .implant-copy-card p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1080px) {
+  .implants-page .container {
+    width: min(1180px, 92%);
+  }
+
+  .implants-page .implant-hero-split,
+  .implants-page .implant-split,
+  .implants-page .implant-split-reverse {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .implants-page .implant-media {
+    height: 280px;
+    padding: 14px;
   }
 }
