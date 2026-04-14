@@ -246,3 +246,51 @@ document.addEventListener('keydown', (event) => {
     closeGalleryLightbox();
   }
 });
+
+const statNumbers = document.querySelectorAll('.stat-number');
+
+if (statNumbers.length > 0) {
+  const formatStat = (value) => new Intl.NumberFormat('en-US').format(value);
+  let statsAnimated = false;
+
+  const animateStat = (element) => {
+    const target = Number(element.getAttribute('data-target') || '0');
+    const duration = 1400;
+    const start = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(target * eased);
+      element.textContent = formatStat(value);
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        element.textContent = formatStat(target);
+      }
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  const statsObserver = new IntersectionObserver(
+    (entries, observerEntries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting || statsAnimated) {
+          return;
+        }
+
+        statsAnimated = true;
+        statNumbers.forEach((stat) => animateStat(stat));
+        observerEntries.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.35 }
+  );
+
+  const statsSection = document.getElementById('stats');
+  if (statsSection) {
+    statsObserver.observe(statsSection);
+  }
+}
