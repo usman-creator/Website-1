@@ -1,4 +1,4 @@
-﻿const menuToggle = document.querySelector('.menu-toggle');
+const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.getElementById('mainNav');
 
 if (menuToggle && mainNav) {
@@ -250,11 +250,12 @@ document.addEventListener('keydown', (event) => {
 const statNumbers = document.querySelectorAll('.stat-number');
 
 if (statNumbers.length > 0) {
-  const formatStat = (value) => new Intl.NumberFormat('en-US').format(value);
+  const formatStat = (value, suffix = '') => new Intl.NumberFormat('en-US').format(value) + suffix;
   let statsAnimated = false;
 
   const animateStat = (element) => {
     const target = Number(element.getAttribute('data-target') || '0');
+    const suffix = element.getAttribute('data-suffix') || '';
     const duration = 1400;
     const start = performance.now();
 
@@ -262,12 +263,12 @@ if (statNumbers.length > 0) {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       const value = Math.round(target * eased);
-      element.textContent = formatStat(value);
+      element.textContent = formatStat(value, suffix);
 
       if (progress < 1) {
         requestAnimationFrame(tick);
       } else {
-        element.textContent = formatStat(target);
+        element.textContent = formatStat(target, suffix);
       }
     };
 
@@ -294,3 +295,7 @@ if (statNumbers.length > 0) {
     statsObserver.observe(statsSection);
   }
 }
+
+
+
+
