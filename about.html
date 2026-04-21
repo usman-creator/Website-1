@@ -21,12 +21,13 @@
       </a>
       <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
       <nav class="main-nav" id="mainNav">
-        <a href="index.html#procedures">Services</a>
         <div class="nav-dropdown">
-          <button class="dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
-            Procedures
-            <span class="dropdown-arrow" aria-hidden="true">&#9662;</span>
-          </button>
+          <div class="dropdown-link-group">
+            <a class="dropdown-label" href="index.html#procedures">Procedures</a>
+            <button class="dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Open procedures menu">
+              <span class="dropdown-arrow" aria-hidden="true">&#9662;</span>
+            </button>
+          </div>
           <div class="dropdown-menu" role="menu">
             <a href="oral-surgery.html" role="menuitem">Oral Surgery</a>
             <a href="extraction.html" role="menuitem">Extraction</a>
@@ -37,9 +38,8 @@
         </div>
         <a href="about.html">About</a>
         <a href="payment.html">Payment</a>
-        <a href="insurances.html">Insurances</a>
+        <a href="insurances.html">Insurance</a>
         <a href="testimonials.html">Testimonials</a>
-
       </nav>
       <a class="btn btn-sm" href="contact.html">Request Consultation</a>
     </div>
@@ -54,9 +54,9 @@
           </aside>
           <div class="practice-learn-copy">
             <h2 class="section-title">Learn more about our Practice</h2>
-            <p>At Dental Speciality Houston, we&apos;re committed to creating healthy, confident smiles through precision, care, and a truly personalized approach. Every patient is unique, which is why we tailor our treatments to your individual needs whether it&apos;s a routine check-up or a more advanced procedure.</p>
+            <p>At Dental Specialty of Houston, we&apos;re committed to creating healthy, confident smiles through precision, care, and a truly personalized approach. Every patient is unique, which is why we tailor our treatments to your individual needs, whether it&apos;s a routine check-up or a more advanced procedure.</p>
             <p>Our practice combines modern dental technology with a strong focus on comfort, efficiency, and patient experience. From the moment you walk in, our goal is to make your visit smooth, stress-free, and effective.</p>
-            <p>We don&apos;t just treat teeth we build long-term relationships and support your oral health journey for years to come. Experience dental care that&apos;s designed around you, so you can smile with confidence every day.</p>
+            <p>We don&apos;t just treat teeth; we build long-term relationships and support your oral health journey for years to come. Experience dental care that&apos;s designed around you, so you can smile with confidence every day.</p>
           </div>
         </article>
       </div>
@@ -116,7 +116,7 @@
             <div class="team-card-overlay">
               <h3>Gracie Davis</h3>
               <p>Office Manager</p>
-              <p class="team-years">5 years experience</p>
+              <p class="team-years">5 years of experience</p>
             </div>
           </article>
 
@@ -127,7 +127,7 @@
             <div class="team-card-overlay">
               <h3>Grecia Arellano</h3>
               <p>Lead Dental Assistant</p>
-              <p class="team-years">6 years experience</p>
+              <p class="team-years">6 years of experience</p>
             </div>
           </article>
 
@@ -138,7 +138,7 @@
             <div class="team-card-overlay">
               <h3>Makenzie Davis</h3>
               <p>Front Desk</p>
-              <p class="team-years">2 years experience</p>
+              <p class="team-years">2 years of experience</p>
             </div>
           </article>
 
@@ -147,7 +147,7 @@
             <div class="team-card-overlay">
               <h3>Ruben Miller</h3>
               <p>Dental Assistant</p>
-              <p class="team-years">10+ years experience</p>
+              <p class="team-years">10+ years of experience</p>
             </div>
           </article>
 
@@ -158,7 +158,7 @@
             <div class="team-card-overlay">
               <h3>Gabriela Kennedy</h3>
               <p>Dental Assistant</p>
-              <p class="team-years">5 years experience</p>
+              <p class="team-years">5 years of experience</p>
             </div>
           </article>
 
@@ -178,7 +178,7 @@
             <div class="team-card-overlay">
               <h3>Alexis Rangel</h3>
               <p>Insurance Verification &amp; Scheduling Coordinator</p>
-              <p class="team-years">5 years experience</p>
+              <p class="team-years">5 years of experience</p>
             </div>
           </article>
         </div>
@@ -216,8 +216,10 @@
   </main>
 
   <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+    <button class="gallery-lightbox-nav gallery-lightbox-prev" id="galleryLightboxPrev" type="button" aria-label="Show previous image">&#8249;</button>
     <button class="gallery-lightbox-close" id="galleryLightboxClose" type="button" aria-label="Close image viewer">&times;</button>
     <img class="gallery-lightbox-img" id="galleryLightboxImg" src="" alt="Expanded gallery image" />
+    <button class="gallery-lightbox-nav gallery-lightbox-next" id="galleryLightboxNext" type="button" aria-label="Show next image">&#8250;</button>
   </div>
 
   <footer class="site-footer site-footer-standard">

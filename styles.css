@@ -2038,17 +2038,37 @@ textarea:focus {
   position: relative;
 }
 
-.dropdown-trigger {
+.dropdown-link-group {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+}
+
+.dropdown-label {
+  color: #36537f;
+  font-weight: 600;
+}
+
+.dropdown-trigger {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
   border: 0;
+  border-radius: 999px;
   background: transparent;
   color: #36537f;
   font: inherit;
   font-weight: 600;
   cursor: pointer;
   padding: 0;
+  transition: background-color 0.22s ease, color 0.22s ease;
+}
+
+.dropdown-trigger:hover,
+.dropdown-trigger:focus-visible {
+  background: rgba(208, 224, 246, 0.45);
+  outline: none;
 }
 
 .dropdown-arrow {
@@ -2109,10 +2129,20 @@ textarea:focus {
     width: 100%;
   }
 
-  .main-nav .dropdown-trigger {
+  .main-nav .dropdown-link-group {
     width: 100%;
     justify-content: space-between;
-    padding: 2px 0;
+    gap: 12px;
+  }
+
+  .main-nav .dropdown-label {
+    flex: 1;
+  }
+
+  .main-nav .dropdown-trigger {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
   }
 
   .main-nav .dropdown-menu {
@@ -2885,14 +2915,22 @@ textarea:focus {
 }
 
 .about-gallery-item {
-  padding: 0;
-  border: 0;
-  background: transparent;
+  padding: 14px;
+  border: 1px solid #d7e4f7;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
+  box-shadow: 0 14px 28px rgba(15, 43, 89, 0.08);
   cursor: pointer;
 }
 
 .about-gallery-item img {
+  width: 100%;
   height: 230px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: #ffffff;
+  border-radius: 12px;
   transition: transform 0.28s ease;
 }
 
@@ -2923,6 +2961,32 @@ textarea:focus {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
   object-fit: contain;
   background: #0b2448;
+}
+
+.gallery-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  border: 1px solid rgba(224, 236, 255, 0.45);
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-size: 2rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
+}
+
+.gallery-lightbox-prev {
+  left: 24px;
+}
+
+.gallery-lightbox-next {
+  right: 24px;
 }
 
 .gallery-lightbox-close {
@@ -2971,6 +3035,20 @@ textarea:focus {
 
   .about-gallery-item img {
     height: 200px;
+  }
+
+  .gallery-lightbox-nav {
+    width: 44px;
+    height: 44px;
+    font-size: 1.7rem;
+  }
+
+  .gallery-lightbox-prev {
+    left: 12px;
+  }
+
+  .gallery-lightbox-next {
+    right: 12px;
   }
 }
 
@@ -4599,4 +4677,56 @@ textarea:focus {
 
 .cherry-wrap > * {
   width: auto;
+}
+
+/* Homepage testimonials decorative mark removal */
+.patients-quote-mark {
+  display: none !important;
+}
+
+/* Header nav centering adjustment */
+@media (min-width: 761px) {
+  .nav-wrap {
+    justify-content: flex-start;
+  }
+
+  .main-nav {
+    flex: 1 1 auto;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .nav-wrap > .btn-sm {
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+}
+
+/* About gallery thumbnail full-image fit override */
+.about-gallery-item img {
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #ffffff;
+}
+
+/* About gallery larger thumbnails */
+.about-gallery-item {
+  padding: 16px !important;
+}
+
+.about-gallery-item img {
+  height: 280px !important;
+}
+
+@media (max-width: 1080px) {
+  .about-gallery-item img {
+    height: 250px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-gallery-item img {
+    height: 220px !important;
+  }
 }
