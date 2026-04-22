@@ -1012,6 +1012,24 @@ textarea:focus {
   box-shadow: 0 14px 30px rgba(5, 18, 42, 0.24);
 }
 
+.appointment-embed {
+  align-content: start;
+  min-height: 520px;
+}
+
+.appointment-embed iframe,
+.appointment-embed > div,
+.appointment-embed form {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.appointment-embed iframe {
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+
 .appointment-form input,
 .appointment-form select {
   width: 100%;
@@ -4922,5 +4940,245 @@ textarea:focus {
   .site-footer-standard .footer-grid,
   .site-footer-merged .footer-grid {
     grid-template-columns: 1fr !important;
+  }
+}
+
+/* Header action updates */
+.header-action-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.header-call-btn {
+  background: linear-gradient(135deg, #30cba9, #27b99b);
+  color: #ffffff;
+}
+
+.header-call-btn:hover {
+  box-shadow: 0 10px 24px rgba(43, 188, 157, 0.3);
+}
+
+/* Reviews CTA */
+.reviews-cta {
+  margin-top: 14px;
+  width: fit-content;
+}
+
+.testimonials-page-head .reviews-cta {
+  margin-top: 16px;
+}
+
+/* Insurance plans refresh */
+.insurance-grid {
+  margin-top: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.insurance-grid li {
+  position: relative;
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  padding: 18px 18px 18px 52px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f9ff 100%);
+  border: 1px solid #d7e5f8;
+  box-shadow: 0 14px 28px rgba(17, 48, 95, 0.08);
+  color: #1f456f;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.insurance-grid li::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2dc8a7, #2d74b8);
+  box-shadow: 0 8px 18px rgba(40, 127, 182, 0.22);
+}
+
+.insurance-grid li::after {
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  width: 6px;
+  height: 10px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: translateY(-62%) rotate(45deg);
+}
+
+@media (max-width: 1080px) {
+  .header-action-group {
+    display: none;
+  }
+
+  .insurance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .insurance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insurance-grid li {
+    min-height: 82px;
+    padding: 16px 16px 16px 48px;
+    font-size: 0.96rem;
+  }
+}
+
+/* Header and testimonial CTA polish */
+.header-action-group {
+  margin-left: 12px;
+}
+
+.patients-say-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.testimonials-page-head {
+  display: grid;
+  justify-items: center;
+}
+
+@media (max-width: 760px) {
+  .header-action-group {
+    display: none;
+  }
+}
+
+/* Blog page */
+.blog-hero-shell {
+  background: linear-gradient(135deg, #ffffff 0%, #eef6ff 54%, #f4fbff 100%);
+  border: 1px solid #d8e6f8;
+  border-radius: 26px;
+  padding: 34px;
+  box-shadow: 0 16px 34px rgba(16, 45, 90, 0.1);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.blog-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.88fr) minmax(0, 1.12fr);
+  gap: 18px;
+  align-items: stretch;
+  padding: 18px;
+  border-radius: 22px;
+  border: 1px solid #d8e6f8;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+  box-shadow: 0 14px 30px rgba(17, 48, 95, 0.1);
+}
+
+.blog-card-image {
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 250px;
+  background: #e7f1ff;
+}
+
+.blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-card-copy {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.blog-card-copy .eyebrow {
+  margin-bottom: 0;
+}
+
+.blog-card-copy h2 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  color: #14335e;
+}
+
+.blog-card-copy p:not(.eyebrow) {
+  margin: 0;
+  color: #4a6489;
+}
+
+@media (max-width: 1080px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .blog-hero-shell {
+    padding: 24px;
+  }
+
+  .blog-card {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .blog-card-image {
+    min-height: 220px;
+  }
+}
+
+/* Navbar interaction polish */
+.main-nav a,
+.main-nav .dropdown-label,
+.main-nav .dropdown-trigger {
+  transition: color 0.22s ease, transform 0.22s ease, opacity 0.22s ease;
+}
+
+.main-nav a:hover,
+.main-nav .dropdown-label:hover,
+.main-nav .dropdown-trigger:hover {
+  color: #1db08f;
+  transform: translateY(-2px);
+}
+
+.main-nav .nav-dropdown:hover .dropdown-label,
+.main-nav .nav-dropdown:hover .dropdown-trigger {
+  color: #1db08f;
+}
+
+.dropdown-menu a {
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  color: #1db08f;
+  background: rgba(29, 176, 143, 0.08);
+  transform: translateX(4px);
+}
+
+@media (max-width: 760px) {
+  .main-nav a:hover,
+  .main-nav .dropdown-label:hover,
+  .main-nav .dropdown-trigger:hover,
+  .dropdown-menu a:hover {
+    transform: none;
   }
 }
